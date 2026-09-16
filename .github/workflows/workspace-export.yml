@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Pack workspace
-        run: tar --exclude=.git -czf neverness-workspace.tar.gz .
+        run: tar --exclude=.git -czf "$RUNNER_TEMP/neverness-workspace.tar.gz" .
       - uses: actions/upload-artifact@v4
         with:
           name: neverness-workspace
-          path: neverness-workspace.tar.gz
+          path: ${{ runner.temp }}/neverness-workspace.tar.gz
           retention-days: 1
