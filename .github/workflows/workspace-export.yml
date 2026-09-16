@@ -1,0 +1,20 @@
+name: workspace-export
+
+on:
+  push:
+    branches:
+      - setup/workspace-export
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pack workspace
+        run: tar --exclude=.git -czf neverness-workspace.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: neverness-workspace
+          path: neverness-workspace.tar.gz
+          retention-days: 1
