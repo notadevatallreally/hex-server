@@ -14,11 +14,11 @@ The initial Neverness baseline is upstream commit `ee0f06b3ee04b4eb678fe9e464e4d
 1. `3fd0d24` — `Fix Docker bootstrap SQLite self-lock`
 2. `b8e9e9d` — `Fix unopened chest import during profile login`
 
-Those existing local commits should be preserved rather than recreated from memory.
+Those two commit objects currently exist only in the CT103 checkout. Their exact diffs are documented in `CODE_REVIEW.md`, but they have not yet been imported into the GitHub `neverness` branch. Until that import is complete, treat the branch as the review/documentation source of truth rather than a deployment-ready replacement for the current CT103 checkout.
 
 ## Repository policy
 
-The fork is the durable source of truth for Neverness code. The running CT103 checkout should eventually be deployed from a specific commit/tag in this repository rather than becoming an independent source of changes.
+The fork is the durable source of truth for Neverness code and documentation. The running CT103 checkout should eventually be deployed from a specific commit/tag in this repository rather than becoming an independent source of changes.
 
 `main` is an upstream mirror, not the production branch. New upstream work should first be reviewed against `neverness`, classified, and deliberately merged or adapted. See [UPSTREAM_CHANGES.md](UPSTREAM_CHANGES.md).
 
